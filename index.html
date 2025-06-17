@@ -42,12 +42,18 @@
     }
 
     video {
+      pointer-events: none;
+      user-drag: none;
+      -webkit-user-drag: none;
       width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
     }
 
       img {
+      pointer-events: none;
+      user-drag: none;
+      -webkit-user-drag: none;
       max-width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
@@ -62,6 +68,9 @@
       text-decoration: none;
     }
   </style>
+  <script>
+  document.addEventListener("contextmenu", e => e.preventDefault());
+</script>
 </head>
 <body>
 
@@ -81,6 +90,7 @@
     <h2>Sample Video</h2>
     <video autoplay muted loop playsinline>
       <source src="videos/showcast.webm" type="video/webm" />
+      <source src="videos/showcast.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </section>
