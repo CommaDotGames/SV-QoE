@@ -8,51 +8,60 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url("images/BG.webp");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: top center;
-      background-attachment: scroll; /* حالا بکگراند با اسکرول حرکت می‌کند */
       color: white;
+      overflow-x: hidden;
       -webkit-user-select: none;
       -moz-user-select: none;
       user-select: none;
-      overflow-x: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .background img {
+      width: 100%;
+      display: block;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding-top: 100px;
     }
 
     header {
-      /*background-color: rgba(0, 0, 0, 0.6);*/
       padding: 60px 20px;
       text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      max-width: 900px;
+      margin: auto;
     }
 
     section {
       padding: 40px 20px;
       max-width: 900px;
-      margin: auto;
+      margin: 40px auto;
       background-color: rgba(0, 0, 0, 0.5);
       border-radius: 15px;
-      margin-bottom: 40px;
     }
 
     h2 {
       color: #00ffff;
     }
 
-    video {
+    video, img {
       pointer-events: none;
       user-drag: none;
       -webkit-user-drag: none;
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-      img {
-      pointer-events: none;
-      user-drag: none;
-      -webkit-user-drag: none;
-      max-width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
     }
@@ -67,44 +76,54 @@
     }
   </style>
   <script>
-  document.addEventListener("contextmenu", e => e.preventDefault());
-</script>
+    document.addEventListener("contextmenu", e => e.preventDefault());
+  </script>
 </head>
 <body>
 
-  <header>
-    <h1>Welcome to the SV-QoE Dataset Website</h1>
-    <p>Scientific video dataset for immersive quality assessment</p>
-  </header>
+  <!-- تصاویر پس‌زمینه -->
+  <div class="background">
+    <img src="images/part_0.webp" alt="BG part 0">
+    <img src="images/part_1.webp" alt="BG part 1">
+    <img src="images/part_2.webp" alt="BG part 2">
+  </div>
 
-  <section>
-    <h2>Dataset Introduction</h2>
-    <p>
-      This dataset contains multiple immersive and stereoscopic videos designed to measure subjective video quality. The videos were processed using various compression levels and spatial configurations.
-    </p>
-  </section>
+  <!-- محتوای صفحه -->
+  <div class="content">
+    <header>
+      <h1>Welcome to the SV-QoE Dataset Website</h1>
+      <p>Scientific video dataset for immersive quality assessment</p>
+    </header>
 
-  <section>
-    <h2>Sample Video</h2>
-    <video autoplay muted loop playsinline>
-      <source src="videos/showcast.webm" type="video/webm" />
-      <source src="videos/test.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </section>
+    <section>
+      <h2>Dataset Introduction</h2>
+      <p>
+        This dataset contains multiple immersive and stereoscopic videos designed to measure subjective video quality. The videos were processed using various compression levels and spatial configurations.
+      </p>
+    </section>
 
-  <section>
-    <h2>Sample Image</h2>
-    <img src="images/vlc.png" alt="Sample dataset image" />
-  </section>
+    <section>
+      <h2>Sample Video</h2>
+      <video autoplay muted loop playsinline>
+        <source src="videos/showcast.webm" type="video/webm" />
+        <source src="videos/test.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
 
-  <section>
-    <h2>Access Full Dataset</h2>
-    <p>
-      You can access the full dataset through the university website here:
-      <a href="https://ftp.itec.aau.at/datasets/AVP-QoE/" target="_blank">Go to SV-QoE Dataset</a>
-    </p>
-  </section>
+    <section>
+      <h2>Sample Image</h2>
+      <img src="images/vlc.png" alt="Sample dataset image" />
+    </section>
+
+    <section>
+      <h2>Access Full Dataset</h2>
+      <p>
+        You can access the full dataset through the university website here:
+        <a href="https://ftp.itec.aau.at/datasets/AVP-QoE/" target="_blank">Go to SV-QoE Dataset</a>
+      </p>
+    </section>
+  </div>
 
 </body>
 </html>
