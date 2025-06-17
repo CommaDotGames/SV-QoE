@@ -32,7 +32,7 @@
 
     .background img {
       width: 100%;
-      /*height: auto;*/
+      height: auto;
       display: block;              /* ➍ حذف فاصلهٔ پیش‌فرض بین <img>ها */
       margin: 0;
       padding: 0;
@@ -90,6 +90,24 @@
     a:hover {
       text-decoration: none;
     }
+    /* 📱 بهینه‌سازی برای موبایل */
+@media screen and (max-width: 600px) {
+  header, section {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  section {
+    margin: 20px 10px;
+  }
+}
   </style>
   <script>
     document.addEventListener("contextmenu", e => e.preventDefault());
