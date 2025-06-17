@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SVQoE Dataset</title>
   <style>
     body {
@@ -10,18 +10,15 @@
       font-family: Arial, sans-serif;
       background-image: url("images/BG.webp");
       background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
       background-repeat: no-repeat;
+      background-position: top center;
+      background-attachment: scroll; /* حالا بکگراند با اسکرول حرکت می‌کند */
       color: white;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
       overflow-x: hidden;
     }
 
     header {
-      background-color: rgba(14, 28, 54, 0.8);
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 60px 20px;
       text-align: center;
     }
@@ -39,14 +36,8 @@
       color: #00ffff;
     }
 
-    video {
+    video, img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    img {
-      max-width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
     }
@@ -60,9 +51,6 @@
       text-decoration: none;
     }
   </style>
-  <script>
-    document.addEventListener("contextmenu", event => event.preventDefault());
-  </script>
 </head>
 <body>
 
