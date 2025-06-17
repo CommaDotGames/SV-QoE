@@ -2,38 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SV-QoE Dataset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SVQoE Dataset</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       background-image: url("images/BG.webp");
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       background-repeat: no-repeat;
-      background-attachment: fixed; /* برای جلوه پارالاکس‌طور */
       color: white;
-      text-shadow: 0 0 10px black;
-      min-height: 100vh;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      overflow-x: hidden;
     }
 
-    .content {
-      padding: 3rem;
-      max-width: 800px;
+    header {
+      background-color: rgba(14, 28, 54, 0.8);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
       margin: auto;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #00ffff;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
     }
   </style>
+  <script>
+    document.addEventListener("contextmenu", event => event.preventDefault());
+  </script>
 </head>
 <body>
-  <div class="content">
-    <h1>Welcome to the SV-QoE Dataset Website</h1>
-    <p>This dataset contains immersive video samples designed for subjective quality evaluation.</p>
-    <p>Learn more about how we collected and processed these videos.</p>
-    <a href="https://your-university-link.com" style="color: #00ffff;">Access the Dataset</a>
-  </div>
+
+  <header>
+    <h1>Welcome to the SVQoE Dataset Website</h1>
+    <p>Scientific video dataset for immersive quality assessment</p>
+  </header>
+
+  <section>
+    <h2>Dataset Introduction</h2>
+    <p>
+      This dataset contains multiple immersive and stereoscopic videos designed to measure subjective video quality. The videos were processed using various compression levels and spatial configurations.
+    </p>
+  </section>
+
+  <section>
+    <h2>Sample Video</h2>
+    <video autoplay muted loop playsinline>
+      <source src="videos/sample.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section>
+    <h2>Sample Image</h2>
+    <img src="images/sample-image.jpg" alt="Sample dataset image" />
+  </section>
+
+  <section>
+    <h2>Access Full Dataset</h2>
+    <p>
+      You can access the full dataset through the university website here:
+      <a href="https://example-university-link.edu/dataset" target="_blank">Go to Dataset</a>
+    </p>
+  </section>
+
 </body>
 </html>
