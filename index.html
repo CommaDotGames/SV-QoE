@@ -7,13 +7,70 @@
   <style>
     body {
       font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #001f3f;
+      color: white;
+      padding: 100px 20px;
       text-align: center;
-      padding: 50px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .videos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .videos video, .videos img {
+      width: 300px;
+      border-radius: 10px;
+    }
+    footer {
+      background: #f4f4f4;
+      text-align: center;
+      padding: 40px;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to the SVQoE Dataset Website</h1>
-  <p>This site is under construction...</p>
+
+  <header>
+    <h1>Welcome to the SVQoE Dataset Website</h1>
+    <p>Scientific Video Quality of Experience</p>
+  </header>
+
+  <section id="about">
+    <h2>About the Dataset</h2>
+    <p>This dataset has been developed to evaluate perceived video quality in immersive and scientific contexts.</p>
+  </section>
+
+  <section id="videos">
+    <h2>Sample Videos</h2>
+    <div class="videos">
+      <video controls src="videos/sample1.mp4"></video>
+      <video controls src="videos/sample2.mp4"></video>
+      <!-- یا اگر فایل ویدیویی نداریم میشه از گیف‌ها استفاده کرد -->
+      <!-- <img src="images/sample1.gif" alt="Sample Video"> -->
+    </div>
+  </section>
+
+  <section id="methodology">
+    <h2>Methodology</h2>
+    <p>We used immersive head-mounted display devices and subjective testing frameworks to collect and evaluate the quality.</p>
+  </section>
+
+  <footer>
+    <p>Access the dataset from the official university repository:
+      <a href="https://exampleuniversity.edu/svqoe" target="_blank">Click here</a>
+    </p>
+  </footer>
+
 </body>
 </html>
