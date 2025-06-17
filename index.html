@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SVQoE Dataset</title>
+  <title>SV-QoE Dataset</title>
   <style>
     body {
       margin: 0;
@@ -14,11 +14,14 @@
       background-position: top center;
       background-attachment: scroll; /* حالا بکگراند با اسکرول حرکت می‌کند */
       color: white;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
       overflow-x: hidden;
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.6);
+      /*background-color: rgba(0, 0, 0, 0.6);*/
       padding: 60px 20px;
       text-align: center;
     }
@@ -36,8 +39,14 @@
       color: #00ffff;
     }
 
-    video, img {
+    video {
       width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+      img {
+      max-width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
     }
@@ -55,7 +64,7 @@
 <body>
 
   <header>
-    <h1>Welcome to the SVQoE Dataset Website</h1>
+    <h1>Welcome to the SV-QoE Dataset Website</h1>
     <p>Scientific video dataset for immersive quality assessment</p>
   </header>
 
@@ -69,21 +78,21 @@
   <section>
     <h2>Sample Video</h2>
     <video autoplay muted loop playsinline>
-      <source src="videos/sample.mp4" type="video/mp4" />
+      <source src="videos/test.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </section>
 
   <section>
     <h2>Sample Image</h2>
-    <img src="images/sample-image.jpg" alt="Sample dataset image" />
+    <img src="images/vlc.png" alt="Sample dataset image" />
   </section>
 
   <section>
     <h2>Access Full Dataset</h2>
     <p>
       You can access the full dataset through the university website here:
-      <a href="https://example-university-link.edu/dataset" target="_blank">Go to Dataset</a>
+      <a href="https://ftp.itec.aau.at/datasets/AVP-QoE/" target="_blank">Go to SV-QoE Dataset</a>
     </p>
   </section>
 
