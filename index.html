@@ -13,29 +13,30 @@
       -webkit-user-select: none;
       -moz-user-select: none;
       user-select: none;
-      position: relative;
-      z-index: 1;
+      position: relative;          /* ➊ مرجع موقعیت برای پس‌زمینه */
     }
 
     .background {
-      position: fixed;
+      position: absolute;          /* ➋ از fixed → absolute */
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 0;
+      z-index: -1;                 /* ➌ پشتِ محتوا */
+      pointer-events: none;        /* اطمینان از کلیک‌پذیری محتوا */
     }
 
     .background img {
       width: 100%;
-      display: block;
+      height: auto;
+      display: block;              /* ➍ حذف فاصلهٔ پیش‌فرض بین <img>ها */
+      margin: 0;
     }
 
-    .content {
+    .content {                     /* همان content قبلی */
       position: relative;
       z-index: 1;
       padding-top: 100px;
     }
-
     header {
       padding: 60px 20px;
       text-align: center;
