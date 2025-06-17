@@ -31,11 +31,10 @@
     }
 
     .background img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100vh;
       display: block;              /* ➍ حذف فاصلهٔ پیش‌فرض بین <img>ها */
-      margin: 0;
-      padding: 0;
+      margin: 0 auto;
       border-radius: 0 !important; /* جلوگیری از گردی */
     }
 
@@ -92,6 +91,11 @@
     }
     /* 📱 بهینه‌سازی برای موبایل */
 @media screen and (max-width: 600px) {
+  .background img {
+    width: auto;
+    height: 100vh;
+    object-fit: cover;
+  }
   header, section {
     padding: 20px 15px;
   }
