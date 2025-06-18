@@ -73,7 +73,7 @@
     .content {
       position: relative;
       z-index: 1;
-      padding-top: 80px; /* فضای زیر navbar */
+      padding-top: 80px;
     }
 
     header {
@@ -83,7 +83,13 @@
       margin: auto;
     }
 
-    section {
+    .section-default {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+
+    .section-with-bg {
       padding: 40px 20px;
       max-width: 900px;
       margin: 40px auto;
@@ -132,7 +138,7 @@
         object-fit: cover;
       }
 
-      header, section {
+      header, .section-default, .section-with-bg {
         padding: 20px 15px;
       }
 
@@ -144,7 +150,7 @@
         font-size: 1.2em;
       }
 
-      section {
+      .section-default, .section-with-bg {
         margin: 20px 10px;
       }
     }
@@ -175,14 +181,14 @@
       <p>Scientific video dataset for immersive quality assessment</p>
     </header>
 
-    <section id="introduction">
+    <section id="introduction" class="section-default">
       <h2>Dataset Introduction</h2>
       <p>
-        This dataset, kl contains multiple immersive and stereoscopic videos designed to measure subjective video quality. The videos were processed using various compression levels and spatial configurations.
+        This dataset contains multiple immersive and stereoscopic videos designed to measure subjective video quality. The videos were processed using various compression levels and spatial configurations.
       </p>
     </section>
 
-    <section id="video">
+    <section id="video" class="section-with-bg">
       <h2>Sample Video</h2>
       <video autoplay muted loop playsinline>
         <source src="videos/output.webm" type="video/webm" />
@@ -191,12 +197,12 @@
       </video>
     </section>
 
-    <section id="image">
+    <section id="image" class="section-with-bg">
       <h2>Sample Image</h2>
       <img src="images/vlc.png" alt="Sample dataset image" />
     </section>
 
-    <section id="download">
+    <section id="download" class="section-default">
       <h2>Access Full Dataset</h2>
       <p>
         You can access the full dataset through the university website here:
@@ -207,3 +213,4 @@
 
 </body>
 </html>
+
