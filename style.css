@@ -1,1 +1,166 @@
-/*for test*/
+/* ریست اولیه */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: relative;
+  background-color: black; /* پس‌زمینه پایه در صورت بارگیری نشدن تصویر */
+}
+
+/* نوار ناوبری بالا */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navbar a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+}
+
+/* تصاویر پس‌زمینه */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.background img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 0 !important;
+}
+
+/* محتوا زیر navbar قرار می‌گیرد */
+.content {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+}
+
+/* عنوان اصلی */
+header {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ساختار هر سکشن (سکشن‌هایی که بک‌گراند دارند) */
+section.section-with-bg {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  background-image: url('../images/Elements2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 15px;
+}
+
+/* سکشن‌هایی که پس‌زمینه ندارند */
+section.section-no-bg {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+/* تیترها */
+h2 {
+  color: #00ffff;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+/* ویدیوها */
+video {
+  pointer-events: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* تصاویر */
+section img {
+  pointer-events: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* لینک‌ها */
+a {
+  color: #00ffff;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* 📱 واکنش‌گرایی برای موبایل */
+@media screen and (max-width: 600px) {
+  .background img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  header, section {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  section {
+    margin: 20px 10px;
+  }
+}
