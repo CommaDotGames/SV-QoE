@@ -8,19 +8,16 @@
   <script src="scripts/script.js" defer></script>
 </head>
 <body>
-  <!-- 🔗 Navigation Bar -->
-  <div id="navbar"></div>
-
-  <!-- 🌄 Background Images -->
-  <div id="background"></div>
-
-  <!-- 📄 Main Content -->
-  <div class="content">
-    <div id="header"></div>
-    <div id="introduction"></div>
-    <div id="video"></div>
-    <div id="image"></div>
-    <div id="download"></div>
+  <body>
+  <div id="navbar" data-include="components/navbar.html"></div>
+  <div id="background" data-include="components/background.html"></div>
+  <div id="content">
+    <div data-include="components/header.html"></div>
+    <div data-include="components/introduction.html"></div>
+    <div data-include="components/video.html"></div>
+    <div data-include="components/image.html"></div>
+    <div data-include="components/download.html"></div>
   </div>
+  <script src="load-components.js"></script>
 </body>
 </html>
