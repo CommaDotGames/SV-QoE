@@ -18,9 +18,8 @@
     body {
       font-family: Arial, sans-serif;
       color: white;
+      background-color: #000;
       overflow-x: hidden;
-      -webkit-user-select: none;
-      -moz-user-select: none;
       user-select: none;
       position: relative;
     }
@@ -43,7 +42,6 @@
       color: #00ffff;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1em;
       padding: 8px 15px;
       border-radius: 8px;
       transition: background 0.3s ease;
@@ -61,15 +59,12 @@
       z-index: -1;
       pointer-events: none;
       background-color: black;
-
     }
 
     .background img {
       width: 100%;
       height: auto;
       display: block;
-      margin: 0;
-      border-radius: 0 !important;
     }
 
     .content {
@@ -94,18 +89,17 @@
     }
 
     .device-card {
-  flex: 1;
-  max-width: 400px;
-  text-align: center;
-  background-image: url('images/Elements1.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
+      flex: 1;
+      max-width: 400px;
+      text-align: center;
+      background-image: url('images/Elements1.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
 
     .device-card img {
       width: 80%;
@@ -146,31 +140,33 @@
 
     h2 {
       color: #00ffff;
-    }
-
-    video {
-      pointer-events: none;
-      user-drag: none;
-      -webkit-user-drag: none;
-      width: 100%;
-      border-radius: 10px;
       margin-bottom: 20px;
     }
 
-    .card-box {
-      flex: 1;
-      min-width: 0;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    p {
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
-    section img {
-      pointer-events: none;
-      user-drag: none;
-      -webkit-user-drag: none;
-      max-width: 100%;
+    /* === Bullet point styles for introduction section === */
+    .section-default ul {
+      padding-left: 20px;
+      list-style-type: square;
+      margin-top: 10px;
+    }
+
+    .section-default ul ul {
+      list-style-type: circle;
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+
+    .section-default li {
+      margin-bottom: 8px;
+    }
+
+    video {
+      width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
     }
@@ -234,11 +230,26 @@
       <p>Scientific video dataset for immersive quality assessment</p>
     </header>
 
+    <!-- ✅ Updated introduction section -->
     <section id="introduction" class="section-default">
       <h2>Dataset Introduction</h2>
-      <p>
-        This dataset contains multiple immersive and stereoscopic videos designed to measure subjective video quality. The videos were processed using various compression levels and spatial configurations.
-      </p>
+      <p>This dataset consists of <strong>stereoscopic</strong> and <strong>2D</strong> video sequences generated entirely in <strong>Unity Engine (v.6000.0.27f1)</strong>. The virtual camera setup and rendering parameters are as follows:</p>
+      <ul>
+        <li><strong>Stereo baseline:</strong> 65 mm (average human interpupillary distance)</li>
+        <li><strong>Camera positions:</strong>
+          <ul>
+            <li>Left_Camera: X = −0.325 m, Y = 0, Z = 0</li>
+            <li>Right_Camera: X = +0.325 m, Y = 0, Z = 0</li>
+            <li>Central_Camera: X = 0, Y = 0, Z = 0</li>
+          </ul>
+        </li>
+        <li><strong>Field of View:</strong> 137° (horizontal)</li>
+        <li><strong>Resolution & Frame Rate:</strong> 4K (3840 × 2160), 60 FPS</li>
+        <li><strong>Clipping planes:</strong> Near = 0.3 units, Far = 1000 units</li>
+        <li><strong>Depth priority:</strong> -1</li>
+        <li><strong>Rendering features:</strong> HDR + MSAA enabled, occlusion culling on, render path: Use Graphics Settings</li>
+        <li><strong>Compression:</strong> MV-HEVC (.MOV), multi-quality x265 CRF (0–51)</li>
+      </ul>
     </section>
 
     <section id="video" class="section-default">
@@ -250,7 +261,7 @@
       </video>
     </section>
 
-    <!-- ✅ سکشن دستگاه‌ها -->
+    <!-- ✅ Devices section -->
     <section class="section-row">
       <div class="device-card">
         <img src="images/AppleVisionProIcon.webp" alt="Apple Vision Pro" />
