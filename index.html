@@ -83,6 +83,43 @@
       margin: auto;
     }
 
+    .section-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.device-card {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.device-card img {
+  width: 80%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.device-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.device-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
     .section-default {
       padding: 40px 20px;
       max-width: 900px;
@@ -112,6 +149,20 @@
       border-radius: 10px;
       margin-bottom: 20px;
     }
+
+    <section class="section-row">
+  <div class="device-card">
+    <img src="images/AppleVisionProIcon.webp" alt="Apple Vision Pro" />
+    <h3>Apple Vision Pro</h3>
+    <p>Immersive spatial video playback experience</p>
+  </div>
+  <div class="device-card">
+    <img src="images/MetaQuest3.webp" alt="Meta Quest 3" />
+    <h3>Meta Quest 3</h3>
+    <p>Compatible VR headset for spatial video viewing</p>
+  </div>
+</section>
+
 
     .section-row {
   display: flex;
