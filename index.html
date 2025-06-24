@@ -233,12 +233,38 @@
         margin: 20px 10px;
       }
     }
+    #backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 255, 255, 0.8);
+  color: #000;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 50;
+}
+#backToTop:hover {
+  background-color: rgba(0, 255, 255, 1);
+}
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
   </style>
 
   <script>
     document.addEventListener("contextmenu", e => e.preventDefault());
   </script>
 </head>
+  
 <body>
 
   <nav class="navbar">
@@ -353,6 +379,24 @@ The SV-QoE is an open-source dataset. Usage of this dataset requires that you ci
       </p>
     </section>
   </div>
+  <button id="backToTop" title="Back to top">↑</button>
+  <script>
+  const backToTop = document.getElementById('backToTop');
+
+  // وقتی کاربر اسکرول می‌کند، دکمه نمایش داده می‌شود
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  // اسکرول نرم به بالا
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 
 </body>
 </html>
