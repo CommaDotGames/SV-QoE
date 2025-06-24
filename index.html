@@ -113,6 +113,25 @@
       margin-bottom: 20px;
     }
 
+    .section-row {
+  display: flex;
+  gap: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.card-box {
+  flex: 1;
+  min-width: 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+
     section img {
       pointer-events: none;
       user-drag: none;
@@ -195,6 +214,18 @@
     Your browser does not support the video tag.
   </video>
 </section>
+
+    <section class="section-row"> 
+  <div class="card-box">
+    <h3>Left Box</h3>
+    <p>This is the left card.</p>
+  </div>
+  <div class="card-box">
+    <h3>Right Box</h3>
+    <p>This is the right card.</p>
+  </div>
+</section>
+
 
 <section id="image" class="section-default">
   <h2>Sample Image</h2>
