@@ -229,30 +229,7 @@
       <h1>Welcome to the SV-QoE Dataset Website</h1>
       <p>Scientific video dataset for immersive quality assessment</p>
     </header>
-
-    <!-- ✅ Updated introduction section -->
-    <section id="introduction" class="section-default">
-      <h2>Dataset Introduction</h2>
-      <p>This dataset consists of <strong>stereoscopic</strong> and <strong>2D</strong> video sequences generated entirely in <strong>Unity Engine (v.6000.0.27f1)</strong>. The virtual camera setup and rendering parameters are as follows:</p>
-      <ul>
-        <li><strong>Stereo baseline:</strong> 65 mm (average human interpupillary distance)</li>
-        <li><strong>Camera positions:</strong>
-          <ul>
-            <li>Left_Camera: X = −0.325 m, Y = 0, Z = 0</li>
-            <li>Right_Camera: X = +0.325 m, Y = 0, Z = 0</li>
-            <li>Central_Camera: X = 0, Y = 0, Z = 0</li>
-          </ul>
-        </li>
-        <li><strong>Field of View:</strong> 137° (horizontal)</li>
-        <li><strong>Resolution & Frame Rate:</strong> 4K (3840 × 2160), 60 FPS</li>
-        <li><strong>Clipping planes:</strong> Near = 0.3 units, Far = 1000 units</li>
-        <li><strong>Depth priority:</strong> -1</li>
-        <li><strong>Rendering features:</strong> HDR + MSAA enabled, occlusion culling on, render path: Use Graphics Settings</li>
-        <li><strong>Compression:</strong> MV-HEVC (.MOV), multi-quality x265 CRF (0–51)</li>
-      </ul>
-    </section>
-
-    <section id="video" class="section-default">
+<section id="video" class="section-default">
       <h2>Sample Video</h2>
       <video autoplay muted loop playsinline>
         <source src="videos/output.webm" type="video/webm" />
@@ -260,6 +237,50 @@
         Your browser does not support the video tag.
       </video>
     </section>
+    <!-- ✅ Updated introduction section -->
+    <section id="introduction" class="section-default">
+  <h2>Dataset Introduction</h2>
+  <p>This dataset consists of stereoscopic and 2D video sequences generated entirely inside Unity Engine (v.6000.0.27f1). The virtual cameras were calibrated to simulate human binocular vision:</p>
+  <ul>
+    <li><strong>Stereo baseline:</strong> 65 mm (average human interpupillary distance)</li>
+    <li><strong>Left/Right camera positions:</strong>
+      <ul>
+        <li>Left_Camera: X = −0.325 m, Y = 0, Z = 0</li>
+        <li>Right_Camera: X = +0.325 m, Y = 0, Z = 0</li>
+        <li>Central_Camera: X = 0, Y = 0, Z = 0</li>
+      </ul>
+    </li>
+    <li><strong>Field of View (horizontal):</strong> 137°, providing a wide-angle view.</li>
+    <li><strong>Each camera rendered at 4K resolution (3840 × 2160) with 60 FPS output and 16:9 aspect ratio.</strong></li>
+  </ul>
+
+  <h3>Rendering Settings</h3>
+  <ul>
+    <li>Clipping planes: Near = 0.3 units, Far = 1000 units</li>
+    <li>Depth priority: -1</li>
+    <li>Occlusion culling enabled for performance</li>
+    <li>HDR and MSAA enabled</li>
+    <li>Render Path: set to “Use Graphics Settings”</li>
+  </ul>
+
+  <h3>Capture and Compression</h3>
+  <ul>
+    <li>Videos were recorded with Unity Recorder and cinematic motion via Cinemachine.</li>
+    <li>Raw videos encoded as MV-HEVC (.MOV) for stereoscopic playback.</li>
+    <li>Multi-quality versions generated at different CRF levels (x265 codec), where CRF ranged 0–51:
+      <ul>
+        <li><strong>CRF=0:</strong> Lossless</li>
+        <li><strong>CRF=18:</strong> Near-lossless</li>
+        <li><strong>CRF=23:</strong> Balanced (default)</li>
+        <li><strong>CRF=28–35:</strong> Reduced bitrate, acceptable quality</li>
+        <li><strong>CRF=51:</strong> Maximum compression</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
+    
 
     <!-- ✅ Devices section -->
     <section class="section-row">
