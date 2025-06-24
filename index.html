@@ -165,6 +165,36 @@
       margin-bottom: 8px;
     }
 
+    .bio-section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bio-container {
+  display: flex;
+  flex-direction: row-reverse; /* عکس سمت راست، متن سمت چپ */
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* نریز زیر هم */
+}
+
+.bio-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.bio-image img {
+  width: 80px;           /* اندازه‌ی خیلی کوچک */
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+
     video {
       width: 100%;
       border-radius: 10px;
@@ -303,7 +333,8 @@
         Usage of this dataset is completely free, provided you cite it with the author’s name: <strong>Afshin Gholami</strong>.
       </p>
       <p>
-        <strong>Contact:</strong> <a href="https://www.linkedin.com/in/afshin-gholami/" target="_blank">LinkedIn</a> • 
+        <strong>Contact:</strong> 
+        <a href="https://www.linkedin.com/in/afshin-gholami/" target="_blank">LinkedIn</a> • 
         <a href="mailto:afshingh@edu.aau.at">Email</a>
       </p>
     </div>
@@ -312,6 +343,7 @@
     </div>
   </div>
 </section>
+
 
     <section id="Download" class="section-default">
       <h2>Access Full Dataset</h2>
