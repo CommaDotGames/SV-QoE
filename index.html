@@ -148,7 +148,6 @@
       font-size: 1rem;
     }
 
-    /* === Bullet point styles for introduction section === */
     .section-default ul {
       padding-left: 20px;
       list-style-type: square;
@@ -166,34 +165,33 @@
     }
 
     .bio-section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 40px auto;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
-.bio-container {
-  display: flex;
-  flex-direction: row-reverse; /* عکس سمت راست، متن سمت چپ */
-  align-items: center;
-  gap: 20px;
-  flex-wrap: nowrap; /* نریز زیر هم */
-}
+    .bio-container {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
 
-.bio-text {
-  flex: 1;
-  min-width: 200px;
-}
+    .bio-text {
+      flex: 1;
+      min-width: 200px;
+    }
 
-.bio-image img {
-  width: 80px;           /* اندازه‌ی خیلی کوچک */
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
+    .bio-image img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
 
     video {
       width: 100%;
@@ -233,31 +231,48 @@
         margin: 20px 10px;
       }
     }
-    #backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: rgba(0, 255, 255, 0.8);
-  color: #000;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 50;
-}
-#backToTop:hover {
-  background-color: rgba(0, 255, 255, 1);
-}
-#backToTop.show {
-  opacity: 1;
-  visibility: visible;
-}
 
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(0, 255, 255, 0.8);
+      color: #000;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 50;
+    }
+    #backToTop:hover {
+      background-color: rgba(0, 255, 255, 1);
+    }
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* === Styles for 3D model section === */
+    .spline-container {
+      width: 100%;
+      height: 80vh;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      margin: 40px auto;
+      max-width: 900px;
+    }
+
+    .spline-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
 
   <script>
@@ -270,6 +285,7 @@
   <nav class="navbar">
     <a href="#Information">Information</a>
     <a href="#Video">Sample Video</a>
+    <a href="#Model">3D Model</a>
     <a href="#Dataset_Author">Developer</a>
     <a href="#Download">Download</a>
   </nav>
@@ -285,58 +301,68 @@
       <h1>Welcome to the SV-QoE Dataset Website</h1>
       <p>Scientific video dataset for immersive quality assessment</p>
     </header>
-<section id="Video" class="section-default">
-      <!--*<h2>Sample Video</h2>-->
+
+    <section id="Video" class="section-default">
       <video autoplay muted loop playsinline>
         <source src="videos/output.webm" type="video/webm" />
         <source src="videos/test.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </section>
-    <!-- ✅ Updated introduction section -->
+
+    <!-- ✅ 3D Model section -->
+    <section id="Model" class="section-default">
+      <h2>Interactive 3D Model</h2>
+      <div class="spline-container">
+        <iframe src="https://my.spline.design/3diconcopy-VcAXGO5jzRYxrvtJFSdSBwue/" 
+                frameborder="0" 
+                allow="autoplay; fullscreen" 
+                scrolling="no">
+        </iframe>
+      </div>
+    </section>
+
     <section id="Information" class="section-default">
-  <h2>Information</h2>
-  <p>The SV-QoE dataset consists of stereoscopic and 2D video sequences generated entirely inside Unity Engine (v.6000.0.27f1). The virtual cameras were calibrated to simulate human binocular vision:</p>
-  <ul>
-    <li><strong>Stereo baseline:</strong> 65 mm (average human interpupillary distance)</li>
-    <li><strong>Left/Right camera positions:</strong>
+      <h2>Information</h2>
+      <p>The SV-QoE dataset consists of stereoscopic and 2D video sequences generated entirely inside Unity Engine (v.6000.0.27f1). The virtual cameras were calibrated to simulate human binocular vision:</p>
       <ul>
-        <li>Left_Camera: X = −0.325 m, Y = 0, Z = 0</li>
-        <li>Right_Camera: X = +0.325 m, Y = 0, Z = 0</li>
-        <li>Central_Camera: X = 0, Y = 0, Z = 0</li>
+        <li><strong>Stereo baseline:</strong> 65 mm (average human interpupillary distance)</li>
+        <li><strong>Left/Right camera positions:</strong>
+          <ul>
+            <li>Left_Camera: X = −0.325 m, Y = 0, Z = 0</li>
+            <li>Right_Camera: X = +0.325 m, Y = 0, Z = 0</li>
+            <li>Central_Camera: X = 0, Y = 0, Z = 0</li>
+          </ul>
+        </li>
+        <li><strong>Field of View (horizontal):</strong> 137°, providing a wide-angle view.</li>
+        <li><strong>Each camera rendered at 4K resolution (3840 × 2160) with 60 FPS output and 16:9 aspect ratio.</strong></li>
       </ul>
-    </li>
-    <li><strong>Field of View (horizontal):</strong> 137°, providing a wide-angle view.</li>
-    <li><strong>Each camera rendered at 4K resolution (3840 × 2160) with 60 FPS output and 16:9 aspect ratio.</strong></li>
-  </ul>
 
-  <h3>Rendering Settings</h3>
-  <ul>
-    <li>Clipping planes: Near = 0.3 units, Far = 1000 units</li>
-    <li>Depth priority: -1</li>
-    <li>Occlusion culling enabled for performance</li>
-    <li>HDR and MSAA enabled</li>
-    <li>Render Path: set to “Use Graphics Settings”</li>
-  </ul>
-
-  <h3>Capture and Compression</h3>
-  <ul>
-    <li>Videos were recorded with Unity Recorder and cinematic motion via Cinemachine.</li>
-    <li>Raw videos encoded as MV-HEVC (.MOV) for stereoscopic playback.</li>
-    <li>Multi-quality versions generated at different CRF levels (x265 codec), where CRF ranged 0–51:
+      <h3>Rendering Settings</h3>
       <ul>
-        <li><strong>CRF=0:</strong> Lossless</li>
-        <li><strong>CRF=18:</strong> Near-lossless</li>
-        <li><strong>CRF=23:</strong> Balanced (default)</li>
-        <li><strong>CRF=28–35:</strong> Reduced bitrate, acceptable quality</li>
-        <li><strong>CRF=51:</strong> Maximum compression</li>
+        <li>Clipping planes: Near = 0.3 units, Far = 1000 units</li>
+        <li>Depth priority: -1</li>
+        <li>Occlusion culling enabled for performance</li>
+        <li>HDR and MSAA enabled</li>
+        <li>Render Path: set to “Use Graphics Settings”</li>
       </ul>
-    </li>
-  </ul>
-</section>
 
-    
-    <!-- ✅ Devices section -->
+      <h3>Capture and Compression</h3>
+      <ul>
+        <li>Videos were recorded with Unity Recorder and cinematic motion via Cinemachine.</li>
+        <li>Raw videos encoded as MV-HEVC (.MOV) for stereoscopic playback.</li>
+        <li>Multi-quality versions generated at different CRF levels (x265 codec), where CRF ranged 0–51:
+          <ul>
+            <li><strong>CRF=0:</strong> Lossless</li>
+            <li><strong>CRF=18:</strong> Near-lossless</li>
+            <li><strong>CRF=23:</strong> Balanced (default)</li>
+            <li><strong>CRF=28–35:</strong> Reduced bitrate, acceptable quality</li>
+            <li><strong>CRF=51:</strong> Maximum compression</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
     <section class="section-row">
       <div class="device-card">
         <img src="images/AppleVisionProIcon.webp" alt="Apple Vision Pro" />
@@ -351,25 +377,24 @@
     </section>
 
     <section id="Dataset_Author" class="section-default bio-section">
-  <h2>Dataset Author</h2>
-  <div class="bio-container">
-    <div class="bio-text">
-      <p>
-        Afshin Gholami is a VR specialist, Unity developer, and researcher focused on mixed reality and multimedia communication.
-The SV-QoE is an open-source dataset. Usage of this dataset requires that you cite it with the author’s name: <strong>Afshin Gholami</strong>.
-      </p>
-      <p>
-        <strong>Contact:</strong> 
-        <a href="https://www.linkedin.com/in/afshin-gholami/" target="_blank">LinkedIn</a> • 
-        <a href="mailto:afshingh@edu.aau.at">Email</a>
-      </p>
-    </div>
-    <div class="bio-image">
-      <img src="images/AfshinGholami.webp" alt="Afshin Gholami" />
-    </div>
-  </div>
-</section>
-
+      <h2>Dataset Author</h2>
+      <div class="bio-container">
+        <div class="bio-text">
+          <p>
+            Afshin Gholami is a VR specialist, Unity developer, and researcher focused on mixed reality and multimedia communication.
+            The SV-QoE is an open-source dataset. Usage of this dataset requires that you cite it with the author’s name: <strong>Afshin Gholami</strong>.
+          </p>
+          <p>
+            <strong>Contact:</strong> 
+            <a href="https://www.linkedin.com/in/afshin-gholami/" target="_blank">LinkedIn</a> • 
+            <a href="mailto:afshingh@edu.aau.at">Email</a>
+          </p>
+        </div>
+        <div class="bio-image">
+          <img src="images/AfshinGholami.webp" alt="Afshin Gholami" />
+        </div>
+      </div>
+    </section>
 
     <section id="Download" class="section-default">
       <h2>Access Full Dataset</h2>
@@ -379,24 +404,20 @@ The SV-QoE is an open-source dataset. Usage of this dataset requires that you ci
       </p>
     </section>
   </div>
+
   <button id="backToTop" title="Back to top">↑</button>
   <script>
-  const backToTop = document.getElementById('backToTop');
-
-  // وقتی کاربر اسکرول می‌کند، دکمه نمایش داده می‌شود
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
-  });
-
-  // اسکرول نرم به بالا
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
